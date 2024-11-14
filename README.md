@@ -1,4 +1,4 @@
-Manchester_Projects
+
 This projects were developed and teached by
 Manchester Robotics Ltd.
 as part of a collaboration with ITESM University.  
