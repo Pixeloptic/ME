@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<robot name="dc_motor">
+
+<link name="world">
+</link>
+
+<link name="Motor">
+    <visual>
+        <origin xyz="0 0 0" rpy="1.5707 0 1.5707"/>
+        <geometry>
+        <mesh filename="package://motor_sim/models/dcMotor.stl"/>
+    </geometry>
+    </visual>
+</link>
+
+<link name="Wheel">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 1.5707 0"/>
+        <geometry>
+        <mesh filename="package://motor_sim/models/MCR2_1000_1_1_Wheel_Coupler_2.stl"/>
+    </geometry>
+    </visual>
+</link>
+
+<joint name="joint1" type="fixed">
+    <parent link="world"/>         
+    <child link="Motor"/>           
+    <origin xyz="0 0 0" rpy="0 0 0.1" />
+</joint>
+
+<joint name="joint2" type="continuous">
+     <origin rpy="0 3.1415 0" xyz="0.02 0 0"/>
+    <parent link="Motor" />
+    <child link="Wheel" />
+    <axis xyz="1 0 0" />
+</joint>
+
+</robot>
